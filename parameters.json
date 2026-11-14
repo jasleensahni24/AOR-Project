@@ -1,0 +1,62 @@
+{
+  "dataset_status": "All store records, coordinates, warehouse location, and operating values in this sample dataset are invented for demonstration; they are not operational or research-paper case-study data.",
+  "location_note": "Synthetic coordinates clustered around Amritsar, India. Store names are placeholders and do not identify actual businesses.",
+  "distance_matrix_file": "distances.csv",
+  "distance_matrix_method": {
+    "method": "Haversine great-circle distance computed from latitude and longitude",
+    "earth_radius_km": 6371.0088,
+    "unit": "kilometres",
+    "rounding": "Rounded to 2 decimal places after calculation",
+    "interpretation": "Straight-line geodesic distance, not road-network distance; symmetric by construction with a zero diagonal."
+  },
+  "crate": {
+    "bottles_per_crate": 12,
+    "source": "Research-paper assumption"
+  },
+  "vehicle_capacity_crates": {
+    "value": 24,
+    "source": "Invented sample parameter"
+  },
+  "average_vehicle_speed_km_per_hour": {
+    "value": 25,
+    "source": "Invented sample parameter"
+  },
+  "fixed_collection_time_minutes_per_store": {
+    "value": 4,
+    "source": "Research-paper case-study assumption"
+  },
+  "variable_collection_time_minutes_per_crate": {
+    "value": 0.25,
+    "source": "Research-paper case-study assumption"
+  },
+  "number_of_available_time_slots": {
+    "value": 5,
+    "source": "Invented sample parameter"
+  },
+  "maximum_route_duration_minutes_per_slot": {
+    "value": 240,
+    "source": "Invented sample parameter; total route operating time assigned to a slot must not exceed this duration"
+  },
+  "maximum_routes_per_time_slot": {
+    "value": 2,
+    "source": "Invented sample parameter"
+  },
+  "priority_score": {
+    "formula": "0.70 * filling_rate + 0.30 * pickup_request",
+    "filling_rate_formula": "current_empty_bottle_crates / maximum_crate_storage_capacity",
+    "source": "Invented team heuristic; the 70/30 weights are not specified by the research paper"
+  },
+  "warehouse": {
+    "node_id": "DEPOT",
+    "name": "Sample Central Warehouse",
+    "latitude": 31.635,
+    "longitude": 74.878,
+    "source": "Invented sample location"
+  },
+  "data_checks": {
+    "store_count": 20,
+    "total_initial_demand_crates": 77,
+    "all_initial_demands_within_store_capacity": true,
+    "all_store_demands_are_integer_crates": true
+  }
+}
